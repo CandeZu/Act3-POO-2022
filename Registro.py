@@ -9,7 +9,7 @@ class Registro:
         self.__presion = presion
     
     def __str__(self):
-        return "Temperatura: {} Humedad: {} Presion: {}".format(self.__temperatura, self.__humedad, self.__presion)
+        return "{}°C             {}%             {}".format(self.__temperatura, self.__humedad, self.__presion)
 
     def getTemperatura(self):
         return self.__temperatura

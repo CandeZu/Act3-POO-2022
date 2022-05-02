@@ -45,28 +45,28 @@ class Manejador:
         minPres = 99
         for dia in range(30):
             for hora in range(24):
-                if self.__dia[dia][hora].getTemperatura() > maxTemp:
-                    maxTemp = self.__dia[i][hora].getTemperatura()
+                if self.__lista[dia][hora].getTemperatura() > maxTemp:
+                    maxTemp = self.__lista[dia][hora].getTemperatura()
                     maxTempDia = dia
                     maxTempHora = hora
-                if self.__dia[dia][hora].getTemperatura() < minTemp:
-                    minTemp = self.__dia[dia][hora].getTemperatura()
+                if self.__lista[dia][hora].getTemperatura() < minTemp:
+                    minTemp = self.__lista[dia][hora].getTemperatura()
                     minTempDia = dia
                     minTempHora = hora
-                if self.__dia[dia][hora].getHumedad() > maxHum:
-                    maxHum = self.__dia[dia][hora].getHumedad()
+                if self.__lista[dia][hora].getHumedad() > maxHum:
+                    maxHum = self.__lista[dia][hora].getHumedad()
                     maxHumDia = dia
                     maxHumHora = hora
-                if self.__dia[dia][hora].getHumedad() < minHum:
-                    minHum = self.__dia[dia][hora].getHumedad()
+                if self.__lista[dia][hora].getHumedad() < minHum:
+                    minHum = self.__lista[dia][hora].getHumedad()
                     minHumDia = dia
                     minHumHora = hora
-                if self.__dia[dia][hora].getPresion() > maxPres:
-                    maxPres = self.__dia[dia][hora].getPresion()
+                if self.__lista[dia][hora].getPresion() > maxPres:
+                    maxPres = self.__lista[dia][hora].getPresion()
                     maxPresDia = dia
                     maxPresHora = hora
-                if self.__dia[dia][hora].getPresion() < minPres:
-                    minPres = self.__dia[dia][hora].getPresion()
+                if self.__lista[dia][hora].getPresion() < minPres:
+                    minPres = self.__lista[dia][hora].getPresion()
                     minPresDia = dia
                     minPresHora = hora
         print("La temperatura más alta fue de {} grados en el día {} a las {} horas.".format(maxTemp, maxTempDia, maxTempHora))
@@ -75,3 +75,21 @@ class Manejador:
         print("La humedad más baja fue de {} % en el día {} a las {} horas.".format(minHum, minHumDia, minHumHora))
         print("La presión más alta fue de {} en el día {} a las {} horas.".format(maxPres, maxPresDia, maxPresHora))
         print("La presión más baja fue de {} en el día {} a las {} horas.".format(minPres, minPresDia, minPresHora))
+
+#opcion2
+    def opcion2(self):
+        acum = 0
+        for hora in range(24):
+            for dia in range(30):
+                acum += self.__lista[dia][hora].getTemperatura()
+            promedio = acum/30
+            print("El promedio de temperatura mensual de la hora {} es de {}".format(hora+1, promedio))
+
+#opcion3
+    def opcion3(self, diadado):
+        print("Dia: {}".format(diadado))
+        print("Hora     Temperatura     Humedad     Presion")
+        for hora in range(24):
+            print("{}hs       {}".format(hora,self.__lista[diadado-1][hora]))
+    
+

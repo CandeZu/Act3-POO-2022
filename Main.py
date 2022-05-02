@@ -1,3 +1,4 @@
+from cgi import print_arguments
 from Manejador import Manejador
 from Registro import Registro
 import os
@@ -5,7 +6,7 @@ import os
 if __name__ == "__main__":
     m = Manejador()
     m.cargar()
-    m.mostrarlista()
+    #m.mostrarlista()
 
     continuar = True
 
@@ -23,12 +24,12 @@ if __name__ == "__main__":
             print("Se muestra para cada variable el día y hora de menor y mayor valor.\n")
             print(m.opcion1())
         elif(op == 2):
-            acum = int(input("La temperatura promedio mensual por cada hora.\n"))
-            #Viajero.acumularMillas(acum)
+            print("La temperatura promedio mensual por cada hora.\n")
+            print(m.opcion2())
         elif(op == 3):
             print("Ingrese el día a buscar: ")
             dia = int(input())
-            canje = int(input("Lista de los valores de las tres variables para cada hora del día {}.\n".format(dia)))
-            #Viajero.canjearMillas(canje)
+            print("Lista de los valores de las tres variables para cada hora del día {}.\n".format(dia))
+            print(m.opcion3(dia))
         elif(op == 0):
             continuar = not continuar
